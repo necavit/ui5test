@@ -1,16 +1,10 @@
 sap.ui.define([
   "sap/ui/core/UIComponent",
-  "sap/ui/model/json/JSONModel",
-  "sap/ui/model/resource/ResourceModel"
-], function(UIComponent, JSONModel, ResourceModel) {
-  return UIComponent.extend("", {
+  "sap/ui/model/json/JSONModel"
+], function(UIComponent, JSONModel) {
+  return UIComponent.extend("app.Component", {
     metadata : {
-      rootView: {
-         "viewName": "app.view.App",
-         "type": "XML",
-         "async": true,
-         "id": "app"
-      }
+      manifest: "json"
     },
 
     init : function () {
@@ -22,11 +16,6 @@ sap.ui.define([
         }
       };
       this.setModel(new JSONModel(data));
-
-      var i18nModel = new ResourceModel({
-        bundleName: "app.i18n.i18n"
-      });
-      this.setModel(i18nModel, "i18n");
     }
   });
 });
