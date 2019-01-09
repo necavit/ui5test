@@ -17,9 +17,12 @@
   </script>
   <script>
     sap.ui.getCore().attachInit(function() {
-      sap.ui.xmlview({
-        viewName : "app.view.App"
-      }).placeAt("content")
+      new sap.ui.core.ComponentContainer({
+        name : "app",
+        settings : {
+          id : "maincomponentcontainer"
+        }
+      }).placeAt("content");
     });
   </script>
 </head>
