@@ -17,11 +17,14 @@
   </script>
   <script>
     sap.ui.getCore().attachInit(function() {
-      new sap.ui.core.ComponentContainer({
-        name : "app",
-        settings : {
-          id : "maincomponentcontainer"
-        }
+      new sap.m.Shell({
+        backgroundColor : "steelblue",
+        app : new sap.ui.core.ComponentContainer({
+          name : "app",
+          settings : {
+            id : "maincomponentcontainer"
+          }
+        })
       }).placeAt("content");
     });
   </script>
