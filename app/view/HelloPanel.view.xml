@@ -19,7 +19,7 @@
       <Input
         value="{/recipient/name}"
         valueLiveUpdate="true"
-        width="60%"/>
+        width="30%"/>
       <FormattedText
         htmlText="{i18n>textHello} {/recipient/name}"
         class="sapUiSmallMargin"/>

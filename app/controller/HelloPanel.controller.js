@@ -4,6 +4,9 @@ sap.ui.define([
   "sap/ui/core/Fragment"
 ], function (Controller, MessageToast, Fragment) {
   return Controller.extend("app.controller.HelloPanel", {
+
+    DIALOG_ID : "helloDialog",
+
     onSayHi : function() {
       var bundle = this.getView().getModel("i18n").getResourceBundle();
       var recipient = this.getView().getModel().getProperty("/recipient/name");
@@ -13,12 +16,12 @@ sap.ui.define([
 
     onShowDialog : function() {
       var view = this.getView();
-      var dialogId = "helloDialog"
-      var dialog = view.byId(dialogId)
+      var dialog = view.byId(this.DIALOG_ID)
       if (!dialog) {
         Fragment.load({
           name : "app.fragment.DialogHello",
-          id : view.getId()
+          id : view.getId(),
+          controller : this
         }).then(function(resolvedDialog) {
           dialog = resolvedDialog;
           view.addDependent(dialog);
@@ -26,6 +29,10 @@ sap.ui.define([
         });
       }
       dialog.open();
+    },
+
+    onCloseDialog : function() {
+      this.getView().byId(this.DIALOG_ID).close();
     }
   });
 });
