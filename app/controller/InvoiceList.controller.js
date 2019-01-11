@@ -4,10 +4,12 @@ sap.ui.define([
 ], function(Controller, JSONModel) {
   return Controller.extend("app.controller.InvoiceList", {
     onInit : function() {
-      var model = new JSONModel({
+      var dataModel = new JSONModel("data/invoices.json");
+      var viewModel = new JSONModel({
         currency : "EUR"
       });
-      this.getView().setModel(model, "view");
+      this.getView().setModel(dataModel);
+      this.getView().setModel(viewModel, "viewModel");
     }
   });
 });

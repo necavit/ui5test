@@ -6,17 +6,17 @@
     headerText="{i18n>invoiceListTitle}"
     class="sapUiResponsiveMargin"
     width="auto"
-    items="{invoice>/invoices}">
+    items="{/invoices}">
     <items>
       <ObjectListItem
-        title="{invoice>quantity} x {invoice>productName}"
+        title="{quantity} x {productName}"
         number="{
           parts : [
             {
-              path : 'invoice>extendedPrice'
+              path : 'extendedPrice'
             },
             {
-              path : 'view>/currency'
+              path : 'viewModel>/currency'
             }
           ],
           type : 'sap.ui.model.type.Currency',
@@ -24,7 +24,8 @@
             showMeasure : false
           }
         }"
-        numberUnit="{view>/currency}"/>
+        numberUnit="{viewModel>/currency}"
+        numberState="{= ${extendedPrice} > 50 ? 'Error' : 'Success' }"/>
     </items>
   </List>
 </mvc:View>
