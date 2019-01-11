@@ -1,0 +1,44 @@
+{
+  "invoices": [
+    {
+      "productName": "Pineapple",
+      "quantity": 21,
+      "extendedPrice": 87.2000,
+      "shipperName": "Fun Inc.",
+      "shippedDate": "2015-04-01T00:00:00",
+      "status": "A"
+    },
+    {
+      "productName": "Milk",
+      "quantity": 4,
+      "extendedPrice": 9.99999,
+      "shipperName": "ACME",
+      "shippedDate": "2015-02-18T00:00:00",
+      "status": "B"
+    },
+    {
+      "productName": "Canned Beans",
+      "quantity": 3,
+      "extendedPrice": 6.85000,
+      "shipperName": "ACME",
+      "shippedDate": "2015-03-02T00:00:00",
+      "status": "B"
+    },
+    {
+      "productName": "Salad",
+      "quantity": 2,
+      "extendedPrice": 8.8000,
+      "shipperName": "ACME",
+      "shippedDate": "2015-04-12T00:00:00",
+      "status": "C"
+    },
+    {
+      "productName": "Bread",
+      "quantity": 1,
+      "extendedPrice": 2.71212,
+      "shipperName": "Fun Inc.",
+      "shippedDate": "2015-01-27T00:00:00",
+      "status": "A"
+    }
+  ]
+}
